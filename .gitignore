@@ -213,3 +213,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+################################
+## Sass Cache and compiled css
+################################
+.sass-cache/
+style.css

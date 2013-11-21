@@ -1,0 +1,27 @@
+// Create vendor-prefixed CSS in one go, e.g.
+// From inuit.css (https://github.com/csswizardry/inuit.css)
+
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+// Media Queries mixins
+@mixin media-query($media-query){
+
+    @if $media-query == tablet {
+
+        @media only screen and (min-width:$tablet-vp) and (max-width:$desktop-vp - 1) { @content; }
+
+    }
+
+    @if $media-query == desktop {
+
+        @media only screen and (min-width:$desktop-vp) { @content; }
+
+    }
+
+}

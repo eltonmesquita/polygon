@@ -1,0 +1,25 @@
+p, .p, ul, ol, hr, table, form, pre,
+h1, .alpha, h2, .beta {
+	margin-bottom: 30px;
+	margin-bottom: 1.5rem;
+}
+
+h1, .alpha {
+	font-size: 60px;
+	font-size: 3rem;
+	font-weight: normal;
+	line-height: 1;
+}
+
+h2, .beta {
+	font-size: 40px;
+	font-size: 2rem;
+	font-weight: normal;
+	line-height: 2;
+}
+
+h3, .gamma {
+	font-size: 30px;
+	font-size: 1.5rem;
+	font-weight: normal;
+}

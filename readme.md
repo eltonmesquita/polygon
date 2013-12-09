@@ -1,4 +1,4 @@
-# Polygon Framework by Elton Mesquita
+# Polygon Framework by [Elton Mesquita](https://twitter.com/eltonfmesquita)
 
 > A flexible SASS based (mini)framework built with small and medium projects in mind. It doesn't provide style, but just the bare minimal boilerplate to build modern and well coded pages.
 >
@@ -18,7 +18,7 @@ One (micro)Framework has caught my attention, [Toast](https://daneden.me/toast/)
 
 The aim of the Polygon Framework is to sit right between a micro-framework like Toast and a full featured framework like [Twitter's Bootstrap](http://getbootstrap.com/) or [ZURB's Foundation](http://foundation.zurb.com/). It tries to be as flexible as possible and does not force who uses it to follow a strict method or way to code but instead, it proposes a basic structure for your project and a simple, efficient, semantic and flexible way to write your markup, mainly for tiny, small and medium projects.
 
-## What's included?
+## Polygon Structure
 - A simple HTML template based in the HTML5 Boilerplate. It uses semantic markup and classes;
 - The basic structure for a clean and well structured project;
 - _style.scss: contains all the imports. Customize it for your needs;
@@ -43,7 +43,7 @@ The aim of the Polygon Framework is to sit right between a micro-framework like 
 	- _type.scss: a blank file. It should contain all the styles for your project's type;
 
 ## Using Polygon
-As you can see above, the Polygon structure is pretty clean and straightfoward. It separates all the Framework's elements basic structure from the styling, using 3 folders:
+As you can see above, the Polygon structure is pretty clean and straightfoward. It separates all the Framework's elements basic structure from the styling, using 3 folders: framework, plugins and style. 
 - framework: contains all the structure of all the elements. It uses a lot of mixins;
 - plugins: contains all the structure of the plugins provided. It doesn't provide style for them;
-- style: as proposed, you should separate the structure from the style. This folders contains mainly blank files, just to serve as a basic structure to your project and mantain the separation of the structure from the style.
+- style: as proposed, you should separate the structure from the style. This folders contains mainly blank files, just to serve as a boilerplate to your project and mantain the separation of the structure from the style.

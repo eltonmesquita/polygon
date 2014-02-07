@@ -1,48 +1,47 @@
-/* A mobile first adaptation from
-   Toast Framework (https://daneden.me/toast/) */
+/* A mobile first adaptation from http://css-tricks.com/dont-overthink-it-grids/ */
 
-.grid {
-        margin-left: 0;
-        max-width: none;
-}
-
-.unit {
-        width: 50%;
-        margin-left: 0;
-        display: block;
+[class*='col-'] {
+  width: 100%;
 }
 
 @include media-query(desktop) {
 
-        .grid {
-                margin-left: -3%;
-                max-width: 105%;
-        }
+.grid {
+  margin: 0 0 $pad 0;
+}
 
-        .unit {
-                display: inline-block;
-                *display: inline;
-                *zoom: 1;
-                vertical-align: top;
-                margin-left: 3%;
-                margin-right: -.25em;
-                /* Clearfix */
-                overflow: hidden;
-                *overflow: visible;
-        }
+[class*='col-'] {
+  float: left;
+  padding-right: $pad;
+  min-width: 1px;
+  min-height: 1px;
+  .grid &:last-of-type {
+    padding-right: 0;
+  }
+}
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.col-1-2 {
+  width: 50%;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+// Add as many columns as you need
 
-        .span-grid { width: 97%; }
+/* Opt-in outside padding */
+.grid-pad {
+  padding: $pad 0 $pad $pad;
+  [class*='col-']:last-of-type {
+    padding-right: $pad;
+  }
+}
 
-        .one-of-two { width: 47%; }
-
-        .one-of-three { width: 30.36%; }
-        .two-of-three { width: 63.666666666%; }
-
-        .one-of-four { width: 22.05%; }
-        .three-of-four { width: 72%; }
-
-        .one-of-five { width: 17.07%; }
-        .two-of-five { width: 37%; }
-        .three-of-five { width: 57%; }
-        .four-of-five { width: 77%; }
 }

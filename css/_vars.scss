@@ -1,12 +1,15 @@
 // Colors - Change, add or delete as you need
 $brand-color: #256E84;
 $cta-color: #B80000;
-$cta-light-color: #D30000;
-$cta-dark-color: #640B0B;
+$cta-light-color: lighten($cta-color, 5%);
+$cta-dark-color: darken($cta-color, 5%);
 
 // Fonts
 $display-font: Arial, sans-serif;
 $body-font: Georgia, Times;
+
+// Grid gutter
+$pad: 20px;
 
 // Media Queries break points
 // Insert the desired break points here

@@ -12,12 +12,12 @@ html {
 	}
 
 a {
-	color: $highlight-color;
+	color: $cta-color;
 	text-decoration: none;
 	&:visited {
-		color: $highlight-dark-color;
+		color: $cta-dark-color;
 	}
 	&:hover {
-		color: $highlight-light-color;
+		color: $cta-light-color;
 	}
 }

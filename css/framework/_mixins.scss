@@ -1,14 +1,3 @@
-// Create vendor-prefixed CSS in one go, e.g.
-// From inuit.css (https://github.com/csswizardry/inuit.css)
-
-@mixin vendor($property, $value...){
-    -webkit-#{$property}:$value;
-       -moz-#{$property}:$value;
-        -ms-#{$property}:$value;
-         -o-#{$property}:$value;
-            #{$property}:$value;
-}
-
 // Media Queries mixins
 @mixin media-query($media-query){
 
@@ -24,4 +13,43 @@
 
     }
 
+}
+
+// Automatic rem fallback mixin from Karl Merkli (http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/)
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+// Mixin for gradients (http://codeboxers.com/straight-sass-gradient-mixin/)
+@mixin linear-gradient($property, $fromColor, $toColor) {
+  $property: $toColor; /* Fallback Color */
+  $property: linear-gradient(to bottom, $fromColor, $toColor);
+  //filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }

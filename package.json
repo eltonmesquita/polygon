@@ -1,0 +1,17 @@
+{
+  "name": "Polygon-Framework",
+  "version": "0.0.1",
+  "description": "A flexible SASS based (mini)framework built with small and medium projects in mind. It doesn't provide style, but just the bare minimal boilerplate to build modern and well coded pages.",
+  "keywords": [
+    "framework css",
+    "css"
+  ],
+  "author": "Elton Mesquita",
+  "license": "",
+  "devDependencies": {
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt": "~0.4.2",
+    "grunt-autoprefixer": "~0.7.1",
+    "grunt-contrib-cssmin": "~0.8.0"
+  }
+}

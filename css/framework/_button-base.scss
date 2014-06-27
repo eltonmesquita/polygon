@@ -1,6 +1,0 @@
-@mixin button {
-	display: inline-block;
-  @include rem(padding, .35, 1);
-	margin: 0 8px;
-	@include rem(margin, 0, .35);
-}

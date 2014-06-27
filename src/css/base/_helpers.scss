@@ -1,0 +1,34 @@
+// Clearfix
+%clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+	width: $container-width;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+	position: relative;
+	&:after {
+		@extend %clearfix;
+	}
+}
+
+%clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*** Nav helpers ***/
+.nav-vertical, .nav-vertical ul {
+  list-style: none;
+}
+
+/*** Text Helpers ***/
+.txt-left    { text-align: left;    }
+.txt-center  { text-align: center;  }
+.txt-right   { text-align: right;   }
+.txt-justify { text-align: justify; }

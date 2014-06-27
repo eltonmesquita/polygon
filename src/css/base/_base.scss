@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;
+  font-family: $body-font;
+  line-height: 1.3;
+  @media only screen and (desktop) {
+    font-size: 125%;
+    line-height: 1.5;
+  }
+
+a {
+  color: $cta-color;
+  text-decoration: none;
+  &:visited {
+    color: $cta-dark-color;
+  }
+  &:hover {
+    color: $cta-light-color;
+  }
+}

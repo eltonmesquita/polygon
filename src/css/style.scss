@@ -1,0 +1,28 @@
+/* ==========================================
+
+	Polygon Framework by @eltonfmesquita
+	A flexible (mini)framework built with 
+	small and medium projects in mind.
+	It doesn't provide style, but just the
+	bare minimal boilerplate to build modern
+	and well coded pages.
+
+========================================== */
+
+
+@import "vars";
+@import "base/normalize";
+@import "base/resets";
+@import "base/base";
+@import "base/type";
+@import "base/grid";
+
+// Uncomment the following imports to use
+// the provided plugins and style structure
+
+// @import "vendor/slider";
+// @import "vendor/modal";
+
+@import "style/fonts";
+@import "style/footer";
+@import "style/header";

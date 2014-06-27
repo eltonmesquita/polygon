@@ -224,3 +224,10 @@ pip-log.txt
 ################################
 .sass-cache/
 style.css
+
+
+################################
+## Sublime
+################################
+widget-paguemenos.sublime-project
+widget-paguemenos.sublime-workspace

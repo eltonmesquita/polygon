@@ -1,29 +1,24 @@
 /***********************************
 *
 *	Type
-*	From Toast Framework
-*	(https://daneden.me/toast/)
 *
 ************************************/
 
-p, .p, ul, ol, hr, table, form, pre,
-h1, .alpha, h2, .beta {
-	margin-bottom: 1.5rem;
+p, ul, ol, hr, table, form, pre,
+h1, h2 {
+	margin-bottom: 1.5em;
 }
 
-h1, .alpha {
+h1 {
 	font-size: 3rem;
 	font-weight: normal;
-	line-height: 1;
 }
 
-h2, .beta {
+h2 {
 	font-size: 2rem;
 	font-weight: normal;
-	line-height: 2;
 }
 
-h3, .gamma {
+h3 {
 	font-size: 1.5rem;
-	font-weight: normal;
 }

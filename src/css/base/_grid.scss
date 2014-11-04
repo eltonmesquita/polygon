@@ -1,6 +1,53 @@
-/* A mobile first adaptation from http://css-tricks.com/dont-overthink-it-grids/ */
+/***************************
+*
+*         Grid
+*
+***************************/
+
+  /*
+    An adaptation from:
+    http://css-tricks.com/dont-overthink-it-grids/
+  */
+
+
+
+
+///////////////////////////////////
+//
+//     Grid Settings
+//
+///////////////////////////////////
+
+  // Set the class name for your grid's container
+  $grid-class: grid;
+
+
+  // Mobile grid settings
+  ///////////////////////////////////
+
+  // [1] Set how many columns you need, set the mobile to 0
+  //     to disable the mobile grid
+  // [2] Set the name of the columns' class
+  // [3] Good in pixels or rem but not em
+
+  $mobile-columns-number: 4;      // [1]
+  $mobile-column-name: col-small; // [2]
+  $mobile-gutter: 10px;           // [3]
+
+
+  // Desktop grid settings
+  ///////////////////////////////////
+
+  $desktop-columns-number: 12;   // [1]
+  $desktop-column-name: col-big; // [2]
+  $desktop-gutter: 20px;         // [3]
+
+
+
 
 // Mixin to create the columns
+///////////////////////////////////
+
 @mixin grid()  {
   // Sets the width of one column for desktop
   $desktop-column-width: 100 / $desktop-columns-number;
@@ -16,7 +63,7 @@
   }
 
   // Creates the widths for each desktop column
-  @media only screen and (min-width: $vp-desktop) {
+  @media only screen and (min-width: $vp-large) {
     @for $i from 1 to $desktop-columns-number + 1 {
       #{"." + $desktop-column-name + "-" + $i} {
         width: #{$desktop-column-width * $i + "%"};
@@ -26,22 +73,24 @@
 
 }
 
-// Resets the Box model. If you don't want to, you'll have to use CSS Calc
-*, *:after, *:before {
-  box-sizing: border-box;
-}
 
 // The grid container
+///////////////////////////////////
+
 #{"." + $grid-class} {
   margin: 0 0 $mobile-gutter 0;
   width: 100%;
-  @media only screen and (min-width: $vp-desktop) {
+  @media only screen and (min-width: $vp-large) {
       margin: 0 0 $desktop-gutter 0;
   }
   &:after {
     @extend %clearfix;
   }
 }
+
+
+// The columns classes
+///////////////////////////////////
 
 [class*="#{$mobile-column-name + "-"}"],
 [class*="#{$desktop-column-name + "-"}"] {
@@ -51,16 +100,23 @@
   padding-left: $mobile-gutter / 2;
   min-width: 1px;
   min-height: 1px;
-  @media only screen and (min-width: $vp-desktop) {
+  @media only screen and (min-width: $vp-large) {
     padding-right: $desktop-gutter / 2;
     padding-left: $desktop-gutter / 2;
   }
 }
 
+
 // Creates the columns
+///////////////////////////////////
+
 @include grid();
 
-// Opt for no padding between the columns
+
+// Opt for no padding
+// between the columns
+///////////////////////////////////
+
 .grid.no-padding {
   > [class*="#{$mobile-column-name + "-"}"],
   > [class*="#{$desktop-column-name + "-"}"] {

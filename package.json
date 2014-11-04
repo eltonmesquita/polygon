@@ -9,12 +9,17 @@
   ],
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-imagemin": "~0.7.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-sass": "~0.7.3",
     "grunt-autoprefixer": "~0.7.3",
-    "grunt-remfallback": "git://github.com/daneden/grunt-remfallback.git",
-    "grunt-contrib-uglify": "~0.4.0"
+    "grunt-contrib-imagemin": "~0.7.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-csso": "~0.6.1",
+    "grunt-devperf": "^0.2.10",
+    "grunt-match-media": "0.0.5",
+    "grunt-pageres": "^1.0.1",
+    "grunt-remfallback": "0.0.5",
+    "grunt-contrib-connect": "~0.7.1"
   },
   "author": "Elton Mesquita @eltonfmesquita",
   "license": "MIT (http://opensource.org/licenses/MIT)"

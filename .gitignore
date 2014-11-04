@@ -4,6 +4,11 @@
 node_modules/
 
 #################
+## Built files
+#################
+build/
+
+#################
 ## Eclipse
 #################
 
@@ -223,7 +228,6 @@ pip-log.txt
 ## Sass Cache and compiled css
 ################################
 .sass-cache/
-style.css
 
 
 ################################

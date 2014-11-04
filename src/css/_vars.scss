@@ -1,25 +1,37 @@
-// Colors - Change, add or delete as you need
-$brand-color: #256E84;
-$cta-color: #B80000;
-$cta-light-color: lighten($cta-color, 5%);
-$cta-dark-color: darken($cta-color, 5%);
+///////////////////////////////////
+//
+//       Variables
+//
+///////////////////////////////////
+
+
+
+
+// Colors
+///////////////////////////////////
+
+$color-brand: #256E84;
+
+
+
 
 // Fonts
-$display-font: Arial, sans-serif;
-$body-font: Georgia, Times;
+///////////////////////////////////
 
-//** Grid **//
-$grid-class: grid; // Set the class name for your grid's container
-// Mobile-settings
-$mobile-columns-number: 4; // Set how many columns you need, set to 0 to desable the mobile grid
-$mobile-column-name: m; // Set the desired name of the class for your columns
-$mobile-gutter: 10px; // Set in pixels or rem but not em
-// Desktop settings
-$desktop-columns-number: 12; // Set how many columns you need
-$desktop-column-name: d; // Set the desired name of the class for your columns
-$desktop-gutter: 20px; // Set in pixels or rem but not em
+$font-display: Arial, sans-serif;
+$font-body:    Georgia, Times;
+
+
+
 
 // Media Queries break points
-// Insert the desired break points here
-$tablet-vp: 650px;
-$vp-desktop: 750px;
+///////////////////////////////////
+
+$vp-small: 450px;
+$vp-large: 750px;
+
+
+// Helpers
+///////////////////////////////////
+
+$container-width: 1040px;

@@ -1,9 +1,25 @@
+/***************************
+*
+*       Helpers
+*
+***************************/
+
+
+
+
 // Clearfix
+///////////////////////////////////
+
 %clearfix {
   content: "";
   display: table;
   clear: both;
 }
+
+
+
+/* General use container
+**********************************/
 
 .container {
 	width: $container-width;
@@ -16,12 +32,9 @@
 	}
 }
 
-/*** Nav helpers ***/
-.nav-vertical, .nav-vertical ul {
-  list-style: none;
-}
+/* Text Helpers
+**********************************/
 
-/*** Text Helpers ***/
 .txt-left    { text-align: left;    }
 .txt-center  { text-align: center;  }
 .txt-right   { text-align: right;   }

@@ -21,8 +21,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          sourcemap: true,
-          style: 'compact'
+          sourcemap: false,
+          style: 'expanded'
         },
         files: {
           'build/css/style.css': 'src/css/style.scss'
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     // Auto prefixer, configure it as you need
     autoprefixer: {
       options: {
-        browsers: ['last 3 versions', 'ie 9', 'ie 8', 'ff 20', 'android 3'],
+        browsers: ['last 3 versions', 'ie 8', 'ff 20', 'android 3'],
         map: true
       },
       no_dest: {
@@ -49,10 +49,7 @@ module.exports = function(grunt) {
       },
       your_target: {
         files: {
-          'css/style.css': ['css/style.css'],
-          'css/about.css': ['css/about.css'],
-          'css/roundabout.css': ['css/roundabout.css'],
-          'css/stores.css': ['css/stores.css']
+          'css/style.css': ['css/style.css']
         },
       },
     },
@@ -83,47 +80,13 @@ module.exports = function(grunt) {
 
     // Compress CSS
     csso: {
-      compress: {
-        options: {
-          report: 'gzip',
-          restructure: false
-        },
-        files: {
-          'build/css/**/*.css': ['build/css/**/*.css']
-        }
+      dynamic_mappings: {
+        expand: true,
+        cwd: 'build/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'build/css/',
+        ext: '.css'
       }
-    },
-
-    // Analyses the performance of the page(s)
-    devperf: {
-      options: {
-        urls: [
-          'http://localhost:8050'
-        ]
-      }
-    },
-
-    // Takes screenshots of the page(s) in several resolutions
-    pageres: {
-        index: {
-            options: {
-                url: 'http://localhost:8050',
-                sizes: [
-                          '1920x1080',
-                          '1440x1024',
-                          '1280x768',
-                          '1024x768',
-                          '1024x600',
-                          '800x600',
-                          '604x966',
-                          '375x667',
-                          '320x480',
-                          '240x380'
-                        ],
-                dest: 'screenshots/index',
-                delay: 2
-            }
-        }
     },
 
     // Launchs a server with livereload included
@@ -132,7 +95,7 @@ module.exports = function(grunt) {
         options: {
           port: 8050,
           base: 'build/',
-          hostname: 'localhost',
+          hostname: '*',
           livereload: true
         }
       }
@@ -167,18 +130,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-remfallback');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-match-media');
   grunt.loadNpmTasks('grunt-csso');
-  grunt.loadNpmTasks('grunt-devperf');
-  grunt.loadNpmTasks('grunt-pageres');
 
   // Register the tasks
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('perf',    ['devperf', 'pageres']);
   grunt.registerTask('build',   ['sass', 'imagemin', 'autoprefixer', 'match_media', 'remfallback', 'csso', 'uglify']);
 
 }

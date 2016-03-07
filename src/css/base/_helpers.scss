@@ -1,14 +1,9 @@
-/***************************
-*
-*       Helpers
-*
-***************************/
+///////////////////////////////////////////////////////////////////////////////
+// # Helpers
+///////////////////////////////////////////////////////////////////////////////
 
-
-
-
-// Clearfix
-///////////////////////////////////
+// ## Clearfix
+///////////////////////////////////////////////////////////////////////////////
 
 %clearfix {
   content: "";
@@ -18,22 +13,24 @@
 
 
 
-/* General use container
-**********************************/
+// ## General use container
+///////////////////////////////////////////////////////////////////////////////
 
 .container {
-	width: $container-width;
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 1rem;
-	position: relative;
-	&:after {
-		@extend %clearfix;
-	}
+  width: $container-width;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  &:after {
+    @extend %clearfix;
+  }
 }
 
-/* Text Helpers
-**********************************/
+
+
+// ## Text Helpers
+///////////////////////////////////////////////////////////////////////////////
 
 .txt-left    { text-align: left;    }
 .txt-center  { text-align: center;  }

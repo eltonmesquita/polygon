@@ -1,52 +1,40 @@
-/***************************
-*
-*         Grid
-*
-***************************/
-
-  /*
-    An adaptation from:
-    http://css-tricks.com/dont-overthink-it-grids/
-  */
+///////////////////////////////////////////////////////////////////////////////
+//  # Grid
+//    An adaptation from:
+//    http://css-tricks.com/dont-overthink-it-grids/
+///////////////////////////////////////////////////////////////////////////////
 
 
+// ## Grid Settings
+///////////////////////////////////////////////////////////////////////////////
+
+// Set the class name for your grid's container
+$grid-class: grid;
+
+// Mobile grid settings
+///////////////////////////////////////////////////////////////////////////////
+
+// [1] Set how many columns you need, set the mobile to 0
+//     to disable the mobile grid
+// [2] Set the name of the columns' class
+// [3] Good in pixels or rem but not em
+
+$mobile-columns-number: 4;      // [1]
+$mobile-column-name: col-small; // [2]
+$mobile-gutter: 10px;           // [3]
 
 
-///////////////////////////////////
-//
-//     Grid Settings
-//
-///////////////////////////////////
+// Desktop grid settings
+///////////////////////////////////////////////////////////////////////////////
 
-  // Set the class name for your grid's container
-  $grid-class: grid;
-
-
-  // Mobile grid settings
-  ///////////////////////////////////
-
-  // [1] Set how many columns you need, set the mobile to 0
-  //     to disable the mobile grid
-  // [2] Set the name of the columns' class
-  // [3] Good in pixels or rem but not em
-
-  $mobile-columns-number: 4;      // [1]
-  $mobile-column-name: col-small; // [2]
-  $mobile-gutter: 10px;           // [3]
-
-
-  // Desktop grid settings
-  ///////////////////////////////////
-
-  $desktop-columns-number: 12;   // [1]
-  $desktop-column-name: col-big; // [2]
-  $desktop-gutter: 20px;         // [3]
-
+$desktop-columns-number: 12;   // [1]
+$desktop-column-name: col-big; // [2]
+$desktop-gutter: 20px;         // [3]
 
 
 
 // Mixin to create the columns
-///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 @mixin grid()  {
   // Sets the width of one column for desktop
@@ -75,7 +63,7 @@
 
 
 // The grid container
-///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 #{"." + $grid-class} {
   margin: 0 0 $mobile-gutter 0;
@@ -90,7 +78,7 @@
 
 
 // The columns classes
-///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 [class*="#{$mobile-column-name + "-"}"],
 [class*="#{$desktop-column-name + "-"}"] {
@@ -108,14 +96,13 @@
 
 
 // Creates the columns
-///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 @include grid();
 
 
-// Opt for no padding
-// between the columns
-///////////////////////////////////
+// Opt for no padding between the columns
+///////////////////////////////////////////////////////////////////////////////
 
 .grid.no-padding {
   > [class*="#{$mobile-column-name + "-"}"],

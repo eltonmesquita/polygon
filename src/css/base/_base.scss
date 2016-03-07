@@ -1,15 +1,14 @@
-/***************************
-*
-*       Base styles
-*
-***************************/
+///////////////////////////////////////////////////////////////////////////////
+//   # Base styles
+//     All your general styles should be here
+///////////////////////////////////////////////////////////////////////////////
 
 
 html {
   font-size: 85%;
-  font-family: $font-body;
+  font-family: $f-body;
   line-height: 1.1;
-  @media only screen and ($vp-large) {
+  @media only screen and (min-width: $vp-large) {
     font-size: 100%;
     line-height: 1.35;
   }
@@ -17,14 +16,10 @@ html {
 
 
 
-
 a {
-  color: $color-brand;
+  color: $c-brand;
   text-decoration: none;
-  &:visited {
-    color: $color-brand;
-  }
   &:hover {
-    color: lighten($color-brand, 10%);
+    color: $c-highlight;
   }
 }

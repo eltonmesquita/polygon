@@ -149,6 +149,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-match-media');
   grunt.loadNpmTasks('grunt-csso');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Register the tasks
   grunt.registerTask('default', ['watch']);

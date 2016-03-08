@@ -233,5 +233,5 @@ pip-log.txt
 ################################
 ## Sublime
 ################################
-widget-paguemenos.sublime-project
-widget-paguemenos.sublime-workspace
+*.sublime-project
+*.sublime-workspace

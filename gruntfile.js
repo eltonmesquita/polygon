@@ -2,17 +2,22 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    // Variables
+    dirs: {
+        output: 'public'
+    },
+
+    // Clear the build directory
+    clean: ['<%= dirs.output %>'],
+
     // Optimizes the images
-    imagemin: {
+    image: {
       dynamic: {
-        options: {
-          optimizationLevel: 6,
-        },
         files: [{
           expand: true,
-          cwd: 'src/img',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'build/img/'
+          cwd: 'src/img/',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: '<%= dirs.output %>/img'
         }]
       }
     },
@@ -21,37 +26,30 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          sourcemap: false,
+          sourcemap: true,
           style: 'expanded'
         },
         files: {
-          'build/css/style.css': 'src/css/style.scss'
+          '<%= dirs.output %>/style.css': 'src/css/style.scss'
         }
       }
     },
 
-    // Auto prefixer, configure it as you need
-    autoprefixer: {
+     // Adds prefixes, rem fallbacks and compact the css
+    postcss: {
       options: {
-        browsers: ['last 3 versions', 'ie 8', 'ff 20', 'android 3'],
-        map: true
+        map: true,
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 3 versions', 'ie 8', 'android 4']
+          }), // add vendor prefixes
+          require('pixrem')(), // add fallbacks for rem units
+          require('cssnano')() // minify the result
+        ]
       },
-      no_dest: {
-        src: 'build/css/*.css'
-      },
-    },
-
-    // Fallback for CSS' REM unit
-    remfallback: {
-      options: {
-        log: true,
-        replace: false,
-      },
-      your_target: {
-        files: {
-          'css/style.css': ['css/style.css']
-        },
-      },
+      dist: {
+        src: '<%= dirs.output %>/**/*.css'
+      }
     },
 
     // Minify your javascripts
@@ -73,7 +71,7 @@ module.exports = function(grunt) {
     match_media: {
       ie: {
         files: {
-          'build/css/ie.css': ['build/css/style.css']
+          '<%= dirs.output %>/ie.css': ['<%= dirs.output %>/style.css']
         }
       }
     },
@@ -82,7 +80,7 @@ module.exports = function(grunt) {
     csso: {
       dynamic_mappings: {
         expand: true,
-        cwd: 'build/css/',
+        cwd: '<%= dirs.output %>/css/',
         src: ['*.css', '!*.min.css'],
         dest: 'build/css/',
         ext: '.css'
@@ -101,18 +99,34 @@ module.exports = function(grunt) {
       }
     },
 
+    // Copies fonts and images when developing for faster building
+    copy: {
+      img: {
+        expand: true,
+        cwd: 'src/img/',
+        src: '**/**.{png,jpg,gif}',
+        dest: '<%= dirs.output %>/img',
+        flatten: false,
+        filter: 'isFile'
+      },
+      fonts: {
+        expand: true,
+        cwd: 'src/fonts/',
+        src: '**/**.{eot,ttf,woff,woff2}',
+        dest: '<%= dirs.output %>/fonts',
+        flatten: false,
+        filter: 'isFile'
+      }
+    },
+
     // Configures the watch task
     watch: {
       options: {
         livereload: true,
       },
-      html: {
-        files: ['**/**.html'],
-        tasks: ['special-html']
-      },
       css: {
         files: ['src/css/**/**.scss'],
-        tasks: ['sass', 'autoprefixer']
+        tasks: ['sass', 'postcss']
       },
       uglify: {
         files: ['src/js/**/**.js'],
@@ -120,7 +134,7 @@ module.exports = function(grunt) {
       },
       imagemin: {
         files: ['src/img/**/*.{png,jpg,gif}'],
-        tasks: ['imagemin']
+        tasks: ['copy:img']
       }
     }
 
@@ -128,17 +142,22 @@ module.exports = function(grunt) {
 
   // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-image');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-remfallback');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-match-media');
   grunt.loadNpmTasks('grunt-csso');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Register the tasks
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build',   ['sass', 'imagemin', 'autoprefixer', 'match_media', 'remfallback', 'csso', 'uglify']);
+  grunt.registerTask('build',   ['clean',
+                                 'sass',
+                                 'image',
+                                 'postcss',
+                                 'match_media',
+                                 'csso',
+                                 'uglify']);
 
 }

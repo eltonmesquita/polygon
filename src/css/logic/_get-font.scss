@@ -11,8 +11,8 @@
 
 
 @function getFont($key) {
-  @if map-has-key($font, $key) {
-    @return map-get($font, $key);
+  @if map-has-key($fonts, $key) {
+    @return map-get($fonts, $key);
   }
 
   @warn "Unknown `#{$key}` in $fonts.";

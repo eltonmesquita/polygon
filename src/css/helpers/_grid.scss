@@ -51,7 +51,7 @@ $desktop-gutter: 20px;         // [3]
   }
 
   // Creates the widths for each desktop column
-  @media only screen and (min-width: $vp-large) {
+  @include at-media(large) {
     @for $i from 1 to $desktop-columns-number + 1 {
       #{"." + $desktop-column-name + "-" + $i} {
         width: #{$desktop-column-width * $i + "%"};
@@ -68,11 +68,13 @@ $desktop-gutter: 20px;         // [3]
 #{"." + $grid-class} {
   margin: 0 0 $mobile-gutter 0;
   width: 100%;
-  @media only screen and (min-width: $vp-large) {
-      margin: 0 0 $desktop-gutter 0;
-  }
+
   &:after {
     @extend %clearfix;
+  }
+
+  @include at-media(large) {
+    margin: 0 0 $desktop-gutter 0;
   }
 }
 
@@ -84,11 +86,13 @@ $desktop-gutter: 20px;         // [3]
 [class*="#{$desktop-column-name + "-"}"] {
   position: relative;
   float: left;
-  padding-right: $mobile-gutter / 2;
-  padding-left: $mobile-gutter / 2;
+
   min-width: 1px;
   min-height: 1px;
-  @media only screen and (min-width: $vp-large) {
+  padding-right: $mobile-gutter / 2;
+  padding-left: $mobile-gutter / 2;
+
+  @include at-media(large) {
     padding-right: $desktop-gutter / 2;
     padding-left: $desktop-gutter / 2;
   }

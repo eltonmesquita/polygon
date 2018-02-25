@@ -4,9 +4,9 @@ textarea {
   padding: rem(12) rem(16);
   margin-bottom: rem(10);
 
-  font-family: $f-body;
+  font-family: getFont(body);
 
   &:focus {
-    border-color: $c-highlight;
+    border-color: getColor(highlight);
   }
 }

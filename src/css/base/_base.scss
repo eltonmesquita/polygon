@@ -5,7 +5,7 @@
 
 html {
   font-size: 85%;
-  font-family: $f-body;
+  font-family: getFont(body);
   line-height: 1.2;
 
   @include at-media(large) {
@@ -15,6 +15,6 @@ html {
 }
 
 a {
-  color: $c-brand;
+  color: getColor(brand);
   text-decoration: none;
 }

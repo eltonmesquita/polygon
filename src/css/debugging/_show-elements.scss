@@ -1,0 +1,14 @@
+///////////////////////////////////////////////////////////////////////////////
+// # Shows a purple outline around all elements in the page.
+//-----------------------------------------
+// Just import it on style.scss directly when debugging.
+///////////////////////////////////////////////////////////////////////////////
+
+
+* {
+  &,
+  &:before,
+  &:after {
+    outline: 1px solid rebeccapurple;
+  }
+}

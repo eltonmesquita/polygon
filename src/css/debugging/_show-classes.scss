@@ -1,0 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////
+// # Shows all the classes in-place that are used in a page.
+//-----------------------------------------
+// Just import it on style.scss directly when debugging.
+///////////////////////////////////////////////////////////////////////////////
+
+
+[class]:before {
+  content: "."attr(class);
+  display: inline-block;
+
+  border: 1px solid rebeccapurple;
+  background: #333;
+  color: aliceblue;
+}

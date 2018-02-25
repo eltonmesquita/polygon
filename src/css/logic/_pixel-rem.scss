@@ -1,0 +1,17 @@
+// # Convert pixels to 'rem',
+//----------------------------------
+// Use it like:
+// .selector {
+//   font-size: rem(25px); // takes 16px as the base value
+//   margin-bottom: rem(50, 18);
+// }
+//////////////////////////////////////////////////////////////////////
+
+
+@function rem($value, $base: 16) {
+  @if $value {
+    @return $value / $base + rem;
+  } @else {
+    @warn "Please provide a valid $value to the rem function.";
+  }
+}

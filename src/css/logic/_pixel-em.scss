@@ -1,0 +1,16 @@
+// # Convert pixels to 'em',
+//----------------------------------
+// Use it like:
+// .selector {
+//   font-size: em(50, 26);
+// }
+//////////////////////////////////////////////////////////////////////
+
+
+@function em($value, $parent) {
+  @if $value and $parent {
+    @return $value / $parent + em;
+  } @else {
+    @warn "Please provide $value and $parent to the em function.";
+  }
+}

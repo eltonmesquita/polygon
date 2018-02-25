@@ -1,11 +1,22 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  # Type
-//    Don't forget to style all your h's
+// # Type
+// Basic typography styling.
 ///////////////////////////////////////////////////////////////////////////////
 
-p, ul, ol, hr, table, form, pre,
-h1, h2 {
-  margin-bottom: 1.414rem;
+p,
+ul,
+ol,
+hr,
+table,
+form,
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1.414em;
 }
 
 h1 {
@@ -25,7 +36,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 h6 {

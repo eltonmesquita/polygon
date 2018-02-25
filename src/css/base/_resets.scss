@@ -1,14 +1,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 // # Resets
-//    Add your global resets here
+// Add your global resets here
 ///////////////////////////////////////////////////////////////////////////////
 
 
 // ## Changes the box-model
-//    This makes life much easier when working with RWD. Use it to make your
-//    life easier
+//-----------------------------------------
+// This makes life much easier when working with RWD.
 ///////////////////////////////////////////////////////////////////////////////
-
 * {
   &,
   &:before,
@@ -18,22 +17,13 @@
 }
 
 
-
-// ## Responsive images
+// ## Responsive images and iframes
 ///////////////////////////////////////////////////////////////////////////////
-
 img {
   max-width: 100%;
   height: auto;
 }
 
-
-
-// ## Resets ul's
-//    I prefer to reset the ul's as I hardly keep the default styles
-///////////////////////////////////////////////////////////////////////////////
-
-ul {
-  padding-left: 0;
-  margin: 0;
+iframe {
+  max-width: 100%;
 }

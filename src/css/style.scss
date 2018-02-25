@@ -1,20 +1,15 @@
-/* *************************************** *
-** *************************************** *
-*   polygon.css by @eltonfmesquita
-*   A CSS boilerplate in SASS for
-*   today's and tomorrow's web.
-* **************************************** *
-* **************************************** */
+/*!
+*  polygon.css by @eltonfmesquita
+*  A simple CSS boilerplate in SCSS for web things
+*  https://github.com/eltonmesquita/polygon/
+* ************************************************** */
 
 
 // # Imports
-//    Insert all your imports here. Avoid to import any file from anywhere
+// Insert all your imports here.
 ///////////////////////////////////////////////////////////////////////////////
 
 @import "vars";
-@import "base/normalize";
-@import "base/helpers";
-@import "base/resets";
-@import "base/base";
-@import "base/type";
-@import "base/grid";
+@import "base/all";
+@import "logic/all";
+@import "helpers/all";

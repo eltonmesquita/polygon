@@ -1,0 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////
+// # Get fonts from the fonts global map
+//-----------------------------------------
+// A function to return one color from the $fonts map.
+//-----------------------------------------
+// Use it like:
+// .selector {
+//   color: getFont(display);
+// }
+///////////////////////////////////////////////////////////////////////////////
+
+
+@function getFont($key) {
+  @if map-has-key($font, $key) {
+    @return map-get($font, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $fonts.";
+  @return null;
+}

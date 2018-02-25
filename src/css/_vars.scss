@@ -1,49 +1,44 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  # Variables
+// # Variables
 //--------------------------------
-//    Define all your global variables in this file
+// All your global variables should be in this file.
+// Colors, fonts and Media Queries should always be inside a map for easy
+// access and reusability. Try to use abstract names and not font names as
+// it won't affect your project in the long run.
 ///////////////////////////////////////////////////////////////////////////////
 
 
-
-
-// ## Colours
+// ## Colors
 //---------------------------------
-//    Colours variables are prefixed with 'c-'. Try to use abstract names and
-//    not colour names as it won't affect your project in the long run
 ///////////////////////////////////////////////////////////////////////////////
-
-$c-brand:     #2196F3;
-$c-highlight: #FF9800;
-$c-light:     #BBDEFB;
-$c-dark:      #1976D2;
-
+$colors: (
+  brand:     #2196F3,
+  highlight: #FF9800,
+  light:     #BBDEFB,
+  dark:      #1976D2
+);
 
 
 // ## Fonts
-//    Font variables are prefixed widt 'f-'. Try to use abstract names and
-//    not font names as it won't affect your project in the long run
+//---------------------------------
 ///////////////////////////////////////////////////////////////////////////////
+$fonts: (
+  display: Arial, sans-serif,
+  body:    Georgia, Times
+);
 
-$f-display: Arial, sans-serif;
-$f-body:    Georgia, Times;
 
-
-
-
-// # Media Queries break points
-//    MQ variables are prefixed widt 'vp-' (as in viewport). Try to use
-//    abstract names and not something specific as mobile, as it won't
-//    affect your project in the long run
+// ## Media Queries break points
+//---------------------------------
 ///////////////////////////////////////////////////////////////////////////////
-
-$vp-small: 450px;
-$vp-large: 750px;
+$viewports: (
+  small: 450px,
+  large: 750px
+);
 
 
 // # Helpers
-//    Any global helper variable should be defined here. Try to chose a name
-//    that describes it the best as possible
+// Any global helper variable should be defined here. Try to chose a name
+// that describes it the best possible.
 ///////////////////////////////////////////////////////////////////////////////
-
 $container-width: 1040px;

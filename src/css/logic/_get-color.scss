@@ -1,0 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////
+// # Get colors from the colors global map
+//-----------------------------------------
+// A function to return one color from the $colors map.
+//-----------------------------------------
+// Use it like:
+// .selector {
+//   color: getColor(brand);
+// }
+///////////////////////////////////////////////////////////////////////////////
+
+
+@function getColor($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}

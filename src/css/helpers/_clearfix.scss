@@ -1,0 +1,10 @@
+// ## Clearfix
+// Classic but yet useful clearfix for use with floats.
+///////////////////////////////////////////////////////////////////////////////
+
+
+%clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}

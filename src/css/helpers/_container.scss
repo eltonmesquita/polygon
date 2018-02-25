@@ -1,0 +1,15 @@
+// # A General use container
+///////////////////////////////////////////////////////////////////////////////
+
+
+.container {
+  position: relative;
+  width: $container-width;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  &:after {
+    @extend %clearfix;
+  }
+}
